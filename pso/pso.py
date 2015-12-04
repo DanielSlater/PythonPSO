@@ -10,7 +10,7 @@ def particle_swarm_optimize(error_func,
                             num_particles: int=10,
                             max_turns_without_improvement: int=None,
                             c1: float=2.0,
-                            c2: float=2.0) -> ([float], float):
+                            c2: float=2.0) -> (array, float):
     """
     try and minimize the error func
 
@@ -27,7 +27,8 @@ def particle_swarm_optimize(error_func,
     :param num_particles: The number of particles to run each iteration
     :param c1: coefficient to weight the local best
     :param c2: coefficient to weight the global best
-    :return: Winning particle
+    :return: tuple of array of winning parameter values, the error of the winning values
+    :rtype: (Numpy.array, float)
     """
     if not max_turns_without_improvement:
         max_turns_without_improvement=max_iterations
