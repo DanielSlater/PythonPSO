@@ -8,7 +8,7 @@ numpy
 
 Example Usage
 ----
-::
+.. code-block:: Python
     def simple_error_function(args):
         return args[0]+args[1]
 
