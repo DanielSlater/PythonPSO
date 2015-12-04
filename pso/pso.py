@@ -8,13 +8,14 @@ def particle_swarm_optimize(error_func,
                             parameter_init=random,
                             stopping_error: float=0.0001,
                             num_particles: int=10,
-                            max_turns_without_improvement: int=None,
+                            max_iterations_without_improvement: int=None,
                             c1: float=2.0,
                             c2: float=2.0) -> (array, float):
     """
     try and minimize the error func
 
-    :param max_turns_without_improvement: If we have this number of consecutive iterations without improvement we stop
+    :param max_iterations_without_improvement: If we have this number of consecutive iterations without
+        improvement we stop
     :type error_func: [float] -> float
     :param error_func: A function that takes a single argument,
         the parameters array for the particle and returns a float
@@ -30,8 +31,8 @@ def particle_swarm_optimize(error_func,
     :return: tuple of array of winning parameter values, the error of the winning values
     :rtype: (Numpy.array, float)
     """
-    if not max_turns_without_improvement:
-        max_turns_without_improvement=max_iterations
+    if not max_iterations_without_improvement:
+        max_iterations_without_improvement=max_iterations
 
     # initialize the particles
     particles = []
@@ -64,7 +65,7 @@ def particle_swarm_optimize(error_func,
                 turns_without_improvement=0
                 if error < stopping_error:
                     break
-            elif turns_without_improvement==max_turns_without_improvement:
+            elif turns_without_improvement==max_iterations_without_improvement:
                 break
             else:
                 turns_without_improvement+=1
