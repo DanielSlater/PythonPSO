@@ -32,7 +32,7 @@ def particle_swarm_optimize(error_func,
     :rtype: (Numpy.array, float)
     """
     if not max_iterations_without_improvement:
-        max_iterations_without_improvement=max_iterations
+        max_iterations_without_improvement = max_iterations
 
     # initialize the particles
     particles = []
@@ -50,8 +50,8 @@ def particle_swarm_optimize(error_func,
     while j < max_iterations:
         for p in particles:
             velocity = p.velocity + \
-                       c1 * random() * (p.best - p.parameters) + \
-                       c2 * random() * (global_best.parameters - p.parameters)
+                c1 * random() * (p.best - p.parameters) + \
+                c2 * random() * (global_best.parameters - p.parameters)
             p.parameters += velocity
 
             error = error_func(p.parameters)
@@ -62,13 +62,13 @@ def particle_swarm_optimize(error_func,
             if error < global_best.error:
                 global_best.parameters = copy(p.parameters)
                 global_best.error = p.error
-                turns_without_improvement=0
+                turns_without_improvement = 0
                 if error < stopping_error:
                     break
-            elif turns_without_improvement==max_iterations_without_improvement:
+            elif turns_without_improvement == max_iterations_without_improvement:
                 break
             else:
-                turns_without_improvement+=1
+                turns_without_improvement += 1
 
         j += 1
 
