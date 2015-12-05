@@ -22,7 +22,8 @@ Minimize function: ::
 
 returns the best found parameters and it's score for that function
 
-Custom parameter weight initalization: ::
+Custom parameter weight initialization: ::
+
     def simple_error_function(args):
         return args[0]+args[1]
 
