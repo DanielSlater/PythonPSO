@@ -41,8 +41,8 @@ Custom parameter weight initialization: ::
 Other arguments
 ---------------
 
-- stopping_error: float = 0.001 #stop when we have a particle with this score
-- num_particles: int = 10 #number of particles to run
-- max_iterations_without_improvement: int = 10 #stop when we have this many consecutive turns without improvement
+- stopping_error: float = 0.001 # stop when we have a particle with this score
+- num_particles: int = 10 # number of particles to run
+- max_iterations_without_improvement: int = 10 # stop when we have this many consecutive turns without improvement
 - c1: float = 2.0 # c1 PSO parameter
 - c2: float = 2.0 # c1 PSO parameter
