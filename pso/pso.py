@@ -42,7 +42,7 @@ def particle_swarm_optimize(error_func,
         particles.append(p)
 
     # let the first particle be the global best
-    best = max(particles, key=lambda x: x.error)
+    best = min(particles, key=lambda x: x.error)
     global_best = _Particle(copy(best.parameters), best.error)
 
     j = 0
@@ -65,10 +65,9 @@ def particle_swarm_optimize(error_func,
                 turns_without_improvement = 0
                 if error < stopping_error:
                     break
-            elif turns_without_improvement == max_iterations_without_improvement:
-                break
-            else:
-                turns_without_improvement += 1
+        if turns_without_improvement == max_iterations_without_improvement:
+            break
+        turns_without_improvement += 1
 
         j += 1
 
