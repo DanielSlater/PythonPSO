@@ -5,8 +5,8 @@ Short and sweet particle swarm optimization implementation in python
 
 Requirements
 ------------
-*python 3
-*numpy
+-python 3
+ numpy
 
 Example Usage
 -------------
