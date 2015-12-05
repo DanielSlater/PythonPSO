@@ -6,7 +6,7 @@ Short and sweet particle swarm optimization implementation in python
 Requirements
 ------------
 -python 3
- numpy
+-numpy
 
 Example Usage
 -------------
